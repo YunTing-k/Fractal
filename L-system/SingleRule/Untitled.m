@@ -1,0 +1,14 @@
+V=1.43;
+bit=14;
+percision=6/2^bit;
+ori=round(V/percision);
+if(V>0)
+    out=dec2bin(ori,bit);
+else
+    out=dec2bin(2^14+ori,bit);
+end
+s1=strrep(out(2:end),'0','A');
+s1=strrep(s1,'1','B');
+s1=strrep(s1,'B','0');
+s1=strrep(s1,'A','1');
+OUT=[out(1),s1]

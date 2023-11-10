@@ -1,0 +1,13 @@
+%======================
+clear 
+close all
+%======================
+audio_name='Set Sail.mp3';
+[data,fs]=audioread([pwd,'\Audio\',audio_name]);
+%======================
+%先将音频信号分段 分段音频进行加窗(窗参数指定) 对加窗后的信号进行FFT
+win=hamming(100,'periodic');
+% win=kaiser(256,5);
+FFTLength = 
+[s,f,t]=stft(data(:,1),fs,'Window',win,'OverlapLength',50,'FFTLength',512,'FrequencyRange','onesided');
+[x,t]=istft(s,fs,)
